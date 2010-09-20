@@ -13,3 +13,4 @@ function railsapp {
 
 # misc
 alias reload='. ~/.bash_profile'
+alias redis='redis-server /usr/local/etc/redis.conf'
