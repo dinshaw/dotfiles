@@ -13,6 +13,3 @@ function railsapp {
 
 # misc
 alias reload='. ~/.bash_profile'
-alias redis='redis-server /usr/local/etc/redis.conf'
-alias resque="QUEUE=* rake resque:work VERBOSE=true"
-alias scheduler="rake resque:scheduler VERBOSE=true"
