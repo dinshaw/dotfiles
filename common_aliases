@@ -33,6 +33,18 @@ alias %=' '
 
 # custom
 alias mongostart='mongod run --config /usr/local/Cellar/mongodb/1.6.2-x86_64/mongod.conf'
+
+# start redis at launch
+# mkdir -p ~/Library/LaunchAgents
+# cp /usr/local/Cellar/redis/2.2.2/io.redis.redis-server.plist ~/Library/LaunchAgents/
+# launchctl load -w ~/Library/LaunchAgents/io.redis.redis-server.plist
 alias redis='redis-server /usr/local/etc/redis.conf'
+
 alias resque="QUEUE=* rake resque:work VERBOSE=true"
 alias scheduler="rake resque:scheduler VERBOSE=true"
+
+# Start memcached at launch
+# mkdir -p ~/Library/LaunchAgents
+# cp /usr/local/Cellar/memcached/1.4.5/com.danga.memcached.plist ~/Library/LaunchAgents/
+# launchctl load -w ~/Library/LaunchAgents/com.danga.memcached.plist
+alias mem="/usr/local/bin/memcached"
