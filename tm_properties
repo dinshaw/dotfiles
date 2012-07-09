@@ -4,3 +4,12 @@ fontSize = 18
 softTabs = true
 tabSize = 2
 softWrap = true
+showInvisibles = true
+
+exclude = "{Rakefile,README,config.ru,Gemfile.lock}"
+excludeDirectories = "{tmp,log,doc,script,public/assets,public/images}"
+excludeInFileChooser = "{tmp,log,doc,script,public/assets,.DS_Store,public/images,.gitkeep}"
+excludeInFolderSearch = "{tmp,log,doc,script,public/assets,public/images,.DS_Store,Gemfile.lock}"
+
+[ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
+binary = true
