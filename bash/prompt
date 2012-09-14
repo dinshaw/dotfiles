@@ -1,0 +1,16 @@
+# prompt with ruby version
+# rbenv version | sed -e 's/ .*//'
+__rbenv_ps1 ()
+{
+  rbenv_ruby_version=`rbenv version | sed -e 's/ .*//'`
+  printf $rbenv_ruby_version
+}
+function parse_git_dirty {
+  [[ $(git status 2> /dev/null \
+    | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
+}
+function parse_git_branch {
+git branch 2> /dev/null \
+  | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
+}
+export PS1='\[\033[37m\]$(__rbenv_ps1) \W$(parse_git_branch)$\[\033[0m\] '

@@ -3,6 +3,7 @@ source ~/.bash/aliases
 source ~/.bash/completions
 source ~/.bash/paths
 source ~/.bash/config
+source ~/.bash/prompt
 
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc
@@ -12,4 +13,4 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session
+export JRUBY_OPTS="--1.9"
