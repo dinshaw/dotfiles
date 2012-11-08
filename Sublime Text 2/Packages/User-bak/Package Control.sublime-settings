@@ -1,0 +1,12 @@
+{
+	"auto_upgrade_last_run": 1352394951,
+	"installed_packages":
+	[
+		"CTags",
+		"DetectSyntax",
+		"Git",
+		"Package Control",
+		"RSpec",
+		"Theme - Soda"
+	]
+}

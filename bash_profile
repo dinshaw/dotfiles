@@ -13,4 +13,3 @@ if [ -f ~/.localrc ]; then
   . ~/.localrc
 fi
 
-export JRUBY_OPTS="--1.9"
