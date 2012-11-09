@@ -13,3 +13,4 @@ excludeInFolderSearch = "{tmp,log,doc,script,public/assets,public/images,.DS_Sto
 
 [ *.{icns,ico,jpg,jpeg,m4v,nib,pdf,png,psd,pyc,rtf,tif,tiff,xib} ]
 binary = true
+  
