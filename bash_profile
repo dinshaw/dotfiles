@@ -17,3 +17,4 @@ JRUBY_OPTS='--1.9 -J-Dfile.encoding=UTF-8 -J-Djruby.jit.threshold=10 -J-Djruby.c
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
