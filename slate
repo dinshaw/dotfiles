@@ -22,7 +22,7 @@ bind right:ctrl;alt throw right resize
 bind left:ctrl;alt  throw left  resize
 
 # Layouts
-layout laptop AFTER shell path:~/ 'osascript change_input.applescript "Dvorak"'
+// layout laptop AFTER shell path:~/ 'osascript change_input.applescript "Dvorak"'
 // layout laptop AFTER shell path:~/ 'osascript change_input.applescript "Dvorak"'
 
 default laptop resolutions:${mon-laptop}

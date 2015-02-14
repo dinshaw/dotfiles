@@ -2,13 +2,13 @@
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
-   	st = status
-   	ci = commit
-   	br = branch
-   	co = checkout
-   	df = diff
-   	lg = log -p
    	who = shortlog -s --
+   	st = status
+  	ci = commit
+  	br = branch
+  	co = checkout
+  	df = diff
+  	lg = log -p
 [color]
 	diff = auto
 	status = auto
@@ -19,9 +19,6 @@
 	autocrlf = input
 [apply]
 	whitespace = nowarn
-<!-- [format]
-	pretty = %C(yellow)%h%Creset %s %C(red)(%cr)%Creset
- -->
 [github]
 	user = <%= print("GitHub Username: "); STDOUT.flush; STDIN.gets.chomp %>
 	token = <%= print("GitHub API Token: "); STDOUT.flush; STDIN.gets.chomp %>

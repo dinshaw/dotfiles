@@ -1,2 +1,4 @@
-export PATH="~/bin:~/.bin:/usr/local/sbin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH"
+export GOPATH="/Users/dgobhai/code/gocode"
+export PATH="~/bin:~/.bin:/usr/local/sbin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/mysql/bin:/usr/local/git/bin:/usr/local/share/npm/bin:~/.rbenv/shims:~/.rbenv/bin:/Applications/Vagrant/bin:/usr/local/packer:$GOPATH/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH:/Users/dinshaw/.cabal/bin"
+export PGHOST=localhost
