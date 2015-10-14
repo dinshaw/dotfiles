@@ -1,6 +1,3 @@
-# cd
-alias ..='cd ..'
-
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
