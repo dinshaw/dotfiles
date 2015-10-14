@@ -5,14 +5,6 @@ source ~/.bash/paths
 source ~/.bash/config
 source ~/.bash/prompt
 
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-
-if [ -f ~/.localrc ]; then
-  . ~/.localrc
-fi
-
 JRUBY_OPTS='--1.9 -J-Dfile.encoding=UTF-8 -J-Djruby.jit.threshold=10 -J-Djruby.compile.mode=JIT -J-Xms1536m -J-Xmx1536m -J-XX:MaxPermSize=512m -J-server'
 
 ## java home
@@ -26,3 +18,5 @@ java8 ## enable java 6 (or just run j6 in terminal)
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
+
+export EDITOR="subl -w"
