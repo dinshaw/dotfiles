@@ -17,8 +17,5 @@ brew install speedtest_cli
 # Remove outdated versions from the cellar.
 brew cleanup
 
-# Set up sublime
-cp ./sublime/rspec.py ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-cp ./sublime/Rspec.last-run ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-ln -sf ./sublime/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-ln -sf ./sublime/Default (OSX).sublime-keymap ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+# Link Sublime to Dropbox
+ln -sf ~/Dropbox/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
