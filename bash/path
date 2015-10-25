@@ -16,4 +16,4 @@ export PATH="$GOPATH/bin:$PATH"
 
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
-export PGHOST=localhost
+export PATH="/usr/local/heroku/bin:$PATH"

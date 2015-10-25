@@ -6,6 +6,3 @@ source ~/.bash/java
 source ~/.bash/editor
 source ~/.bash/extras
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
