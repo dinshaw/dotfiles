@@ -154,6 +154,8 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
+# Show the ~/Volumes folder
+chflags nohidden ~/Volumes
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
