@@ -319,7 +319,7 @@ end tell
 EOD
 
 # Use Dvorak
-
+defaults write com.apple.HIToolbox AppleEnabledInputSources -array-add '<dict><key>InputSourceKind</key><string>Keyboard Layout</string><key>KeyboardLayout ID</key><integer>15000</integer><key>KeyboardLayout Name</key><string>USInternational-PC</string></dict>'
 
 
 ###############################################################################

@@ -18,10 +18,14 @@ brew cleanup
 # Link Sublime cli
 ln -sfn /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin
 # Install package control
-curl -o ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package 
+if [ ! -f ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package ]; then
+    echo "Downloading Sublime package control"
+	curl -o ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package 
+fi
+# Link Sublime to Dropbox
+mv ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User-old
+ln -sf ~/Dropbox/Library/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
 # Copy terminal preferences
 #cp ./preferences/com.apple.Terminal.plist /Library/Preferences/
 
-# Link Sublime to Dropbox
-# ln -sf ~/Dropbox/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
