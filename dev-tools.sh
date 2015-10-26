@@ -20,12 +20,12 @@ ln -sfn /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/loc
 # Install package control
 if [ ! -f ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package ]; then
     echo "Downloading Sublime package control"
-	curl -o ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package 
+	curl -o ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package
 fi
 # Link Sublime to Dropbox
-mv ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User-old
+mv -f ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/user-bak
 ln -sf ~/Dropbox/Library/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
 # Copy terminal preferences
-#cp ./preferences/com.apple.Terminal.plist /Library/Preferences/
+cp ./preferences/com.apple.Terminal.plist ~/Library/Preferences/
 
