@@ -22,8 +22,11 @@ if [ ! -f ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Pa
     echo "Downloading Sublime package control"
 	curl -o ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package
 fi
+
 # Link Sublime to Dropbox
-mv -f ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/user-bak
+## Remove the newly-created User dir
+rm -rf ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+## Symlink Dropbox version
 ln -sf ~/Dropbox/Library/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/Library/Application\ Support/Sublime\ Text\ 3/Packages
 
 # Copy terminal preferences
