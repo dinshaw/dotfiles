@@ -31,4 +31,6 @@ ln -sf ~/Dropbox/Library/Application\ Support/Sublime\ Text\ 3/Packages/User  ~/
 
 # Copy terminal preferences
 cp ./preferences/com.apple.Terminal.plist ~/Library/Preferences/
+# Copy keybsaord preferences
+cp ./preferences/com.apple.HIToolbox.plist ~/Library/Preferences/
 
