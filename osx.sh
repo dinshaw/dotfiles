@@ -67,16 +67,9 @@ sudo pmset -a sms 0
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
 
-# Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Set scrolling to new way - iPhone-like
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true
-
+# Disable scrolling to new way - iPhone-like
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool true0
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -181,12 +174,6 @@ defaults write com.apple.dock autohide -bool true
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-# Disable the Launchpad gesture (pinch with thumb and three fingers)
-defaults write com.apple.dock showLaunchpadGestureEnabled -int 0
-
-# Reset Launchpad, but keep the desktop wallpaper intact
-find "${HOME}/Library/Application Support/Dock" -name "*-*.db" -maxdepth 1 -delete
-
 # Hot corners
 # Possible values:
 #  0: no-op
@@ -208,6 +195,47 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Start screen saver
 defaults write com.apple.dock wvous-bl-corner -int 5
 defaults write com.apple.dock wvous-bl-modifier -int 0
+
+# ==============================================
+# Trackpad
+# ==============================================
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+
+# Disable three finger tap (look up)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerTapGesture -int 0
+
+# Disable three finger drag
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool false
+
+# Zoom in or out
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadPinch -bool false
+
+# Smart zoom, double-tap with two fingers
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerDoubleTapGesture -bool false
+
+# Rotate
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRotate -bool false
+
+# Notification Center
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadTwoFingerFromRightEdgeSwipeGesture -int 0
+
+# Swipe between pages with two fingers
+defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
+
+# Swipe between full-screen apps
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 0
+
+# Enable other multi-finger gestures
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerVertSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerPinchGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerHorizSwipeGesture -int 0
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFiveFingerPinchGesture -int 0
+
+defaults write com.apple.dock showMissionControlGestureEnabled -bool false
+defaults write com.apple.dock showAppExposeGestureEnabled -bool false
+defaults write com.apple.dock showDesktopGestureEnabled -bool false
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -258,59 +286,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 
 # Add a context menu item for showing the Web Inspector in web views
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
-
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
-
-# Install my fav font for terminal
-# osascript <<EOD
-#   set theFontPath to "${HOME}/.dotfiles/fonts/Consolas.ttf"
-
-#   set theFont to POSIX file theFontPath
-
-#   tell application "Finder"
-#     open theFont
-#   end tell
-
-#   tell application "Font Book"
-#     activate
-#     set theFontWindow to the first window
-#   end tell
-
-#   tell application "System Events"
-#     tell process "Font Book"
-#       tell window 1
-#         tell group 1
-#           click button "Install Font"
-#         end tell
-#       end tell
-#     end tell
-#   end tell
-
-# EOD
-
-# Open Terminal.app with Homebrew
-osascript <<EOD
-
-tell application "Terminal"
-
-  local allOpenedWindows
-  local initialOpenedWindows
-  local windowID
-  set themeName to "Homebrew"
-  set default settings to settings set themeName
-
-end tell
-
-EOD
-
-# Use Dvorak
-
-
 
 ###############################################################################
 # Activity Monitor                                                            #
