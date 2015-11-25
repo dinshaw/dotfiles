@@ -5,13 +5,10 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
-alias gp='git push'
-alias gc='git commit'
-alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias gl='git log --oneline'
-alias tag_release='git tag "release-$(date +'%Y%m%d.%k%M')"'
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
 
 # Rails
 alias rails_rebuild_db='rake db:drop:all db:create db:migrate db:seed'
