@@ -11,6 +11,7 @@ brew install rbenv
 brew install mysql
 brew install imagemagick
 brew install speedtest_cli
+brew cask install --appdir="/Applications" firefox
 
 # Remove outdated versions from the cellar.
 brew cleanup
