@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Make my code directory
+mkdir ~/code
+
 # Make sure we’re using the latest Homebrew.
 brew update
 
