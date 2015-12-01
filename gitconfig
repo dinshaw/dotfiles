@@ -1,16 +1,16 @@
 [alias]
     amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
-    br = branch -av
+	br = branch
     brname = !git branch | grep "^*" | awk '{ print $2 }'
-    ci = commit
+	ci = commit
     changes = "!f() { git log --pretty=format:'* %s' $1..$2; }; f"
     churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
-    co = checkout
+	co = checkout
     details = log -n1 -p --format=fuller
     g = !git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     l = "!f() { git log $* | grep '^commit ' | cut -f 2 -d ' '; }; f"
     root = rev-parse --show-toplevel
-    st = status
+	st = status
     # tags = tag -l
 
 [color]
