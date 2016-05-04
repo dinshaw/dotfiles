@@ -225,7 +225,7 @@ defaults write NSGlobalDomain AppleEnableSwipeNavigateWithScrolls -bool false
 # Swipe between full-screen apps
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 0
 
-# Enable other multi-finger gestures
+#  Other multi-finger gestures
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerVertSwipeGesture -int 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadFourFingerPinchGesture -int 0
