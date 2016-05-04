@@ -11,7 +11,7 @@ git config --global alias.ci commit
 git config --global alias.st status
 
 # Rails
-alias rails_rebuild_db='rake db:drop:all db:create db:migrate db:seed'
+alias rails_rebuild_db='be rake db:drop:all db:create db:migrate; RAILS_ENV=test be rake db:create db:migrate'
 
 alias be='bundle exec'
 alias spec='bundle exec rspec -f d'
