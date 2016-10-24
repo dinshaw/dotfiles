@@ -1,10 +1,13 @@
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/homebrew/bin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 export PATH="/usr/local/git/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="~/.rbenv/shims:$PATH"
 export PATH="~/.rbenv/bin:$PATH"
+
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export GOPATH="/Users/dgobhai/code/gocode"
 export PATH="$GOPATH/bin:$PATH"

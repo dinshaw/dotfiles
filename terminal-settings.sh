@@ -13,31 +13,31 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 
 # Install my fav font for terminal
-osascript <<EOD
-  set theFontPath to "${HOME}/.dotfiles/fonts/Consolas.ttf"
+# osascript <<EOD
+#   set theFontPath to "${HOME}/.dotfiles/fonts/Consolas.ttf"
 
-  set theFont to POSIX file theFontPath
+#   set theFont to POSIX file theFontPath
 
-  tell application "Finder"
-    open theFont
-  end tell
+#   tell application "Finder"
+#     open theFont
+#   end tell
 
-  tell application "Font Book"
-    activate
-    set theFontWindow to the first window
-  end tell
+#   tell application "Font Book"
+#     activate
+#     set theFontWindow to the first window
+#   end tell
 
-  tell application "System Events"
-    tell process "Font Book"
-      tell window 1
-        tell group 1
-          click button "Install Font"
-        end tell
-      end tell
-      quit
-    end tell
-  end tell
-EOD
+#   tell application "System Events"
+#     tell process "Font Book"
+#       tell window 1
+#         tell group 1
+#           click button "Install Font"
+#         end tell
+#       end tell
+#       quit
+#     end tell
+#   end tell
+# EOD
 
 # Open Terminal.app with Homebrew
 osascript <<EOD

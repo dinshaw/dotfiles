@@ -15,3 +15,4 @@ alias rails_rebuild_db='rake db:drop:all db:create db:migrate db:seed'
 
 alias be='bundle exec'
 alias spec='bundle exec rspec -f d'
+
