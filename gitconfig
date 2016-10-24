@@ -36,5 +36,5 @@
     mnemonicprefix = true
 
 [user]
-  name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+  name = Dinshaw
+  email = gobhai@gmai.com
