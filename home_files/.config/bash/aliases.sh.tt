@@ -1,8 +1,5 @@
 #! /usr/bin/env bash
 
-# Section: https://asciidoctor.org:[ASCII Doctor]
-alias ad="asciidoctor"
-
 # Section: https://asciinema.org:[asciinema]
 alias cin="asciinema"
 alias cina="asciinema rec --append"
@@ -44,22 +41,11 @@ alias denvs="direnv status"
 # Section: https://www.docker.com:[Docker]
 alias dr="docker"
 alias drb="docker build"
-alias drc="docker-compose"
+alias drc="docker compose"
 alias drd="docker system prune --force && docker buildx prune --force"
 alias dri="docker images"
 alias drp="docker ps --all"
 alias drt="docker tag"
-
-# Section: http://duti.org:[duti]
-alias dutia="duti $HOME/.config/duti/configuration.duti"
-
-# Section: https://elm-lang.org:[Elm]
-alias elmc="elm repl"
-alias elmg="elm init"
-alias elmi="elm install"
-alias elmp="elm publish"
-alias elms="elm reactor"
-alias elmt="elm-test"
 
 # Section: https://the.exa.website:[Exa]
 alias x1="exa --oneline --all --group-directories-first"
@@ -68,15 +54,6 @@ alias xt="exa --all --group-directories-first --ignore-glob '*.git' --git-ignore
 
 # Section: https://github.com/junegunn/fzf:[Fuzzy Finder]
 alias ff="fzf --preview 'bat --theme DarkNeon --color always {}' | xargs $EDITOR"
-
-# Section: https://www.alchemists.io/projects/gemsmith:[Gemsmith]
-alias gse="gemsmith --config --edit"
-alias gsg="gemsmith --generate"
-alias gsi="rake install"
-alias gso="gemsmith --open"
-alias gsp="rake publish"
-alias gsq="rake code_quality"
-alias gsr="gemsmith --read"
 
 # Section: General
 alias ...="cd ../.."
@@ -188,12 +165,6 @@ alias guthors='git log --color --pretty=format:"%C(bold blue)%an%C(reset)" | sor
 alias gwl="git worktree list"
 alias gwp="git worktree prune"
 
-# Section: https://github.com/TaKO8Ki/frum:[Frum]
-alias rbi="frum install"
-alias rbc="frum local"
-alias rbu="frum uninstall"
-alias rbv="frum versions"
-
 # Section: https://brew.sh:[Homebrew]
 alias hb="brew"
 alias hbd="brew doctor"
@@ -211,22 +182,6 @@ alias hbug="brew update && brew upgrade"
 # Section: https://marked2app.com:[Marked 2]
 alias mo="open -a Marked\ 2"
 
-# Section: https://www.alchemists.io/projects/milestoner:[Milestoner]
-alias ms="milestoner"
-alias mss='milestoner --status | _copy_and_print "\n"'
-alias mse="milestoner --config --edit"
-alias msp="milestoner --publish"
-
-# Section: Network
-alias dnsf="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder && printf 'DNS cache cleared.\n'"
-alias dnsi="scutil --dns"
-alias dnss="sudo dscacheutil -statistics"
-alias ipa='curl --silent checkip.dyndns.org | rg --only-matching "[0-9\.]+" | _copy_and_print'
-alias key="open /Applications/Utilities/Keychain\ Access.app"
-alias ping="gping"
-alias sshe="$EDITOR $HOME/.ssh/config"
-alias top="htop"
-
 # Section: https://cocoatech.com:[Path Finder]
 alias pfo='open -a "Path Finder.app" "$PWD"'
 
@@ -242,28 +197,6 @@ alias reds="redis-server $HOMEBREW_PREFIX/etc/redis.conf &"
 # Section: https://github.com/BurntSushi/ripgrep:[ripgrep]
 alias rgf="rg --files --glob"
 
-# Section: https://rspec.info:[RSpec]
-alias rsf="rspec spec --only-failures"
-alias rsn="rspec spec --next-failure"
-alias rso="rspec spec --dry-run --format doc > tmp/rspec-overview.txt && e tmp/rspec-overview.txt"
-alias rss="rspec spec"
-alias rst="rspec spec --tag"
-
-# Section: https://github.com/bbatsov/rubocop:[Rubocop]
-alias cop="rubocop --parallel --display-cop-names --display-style-guide"
-alias copc="rubocop --auto-gen-config"
-alias copd='find . -name ".rubocop-http*" -type f -delete'
-alias copf="rubocop --auto-correct"
-alias copfo="rubocop --auto-correct --only"
-alias copo="rubocop --display-cop-names --only"
-alias cops="rubocop --show-cops"
-
-# Section: https://www.ruby-lang.org:[Ruby]
-alias rbbe="$EDITOR $HOME/Engineering/Misc/benchmark.rb"
-alias rbbr="ruby $HOME/Engineering/Misc/benchmark.rb"
-alias rbse="$EDITOR $HOME/Engineering/Misc/snippet.rb"
-alias rbsr="ruby $HOME/Engineering/Misc/snippet.rb"
-
 # Section: https://rubyonrails.org:[Ruby on Rails]
 alias railsb="rails console --sandbox"
 alias railse="EDITOR='sublime --wait' rails credentials:edit"
@@ -271,49 +204,5 @@ alias railse="EDITOR='sublime --wait' rails credentials:edit"
 # Section: https://github.com/whitesmith/RubyCritic:[RubyCritic]
 alias rbct="open tmp/rubycritic/overview.html"
 
-# Section: https://rubygems.org:[RubyGems]
-alias gemc="gem cleanup"
-alias gemcli="rg 'spec\.executables' --no-messages --max-depth=2 --files-with-matches gemspec . | xargs basename | cut -d. -f1 | sort | _copy_and_print '\n'"
-alias gemcr="$EDITOR $HOME/.gem/credentials"
-alias geme="gem environment"
-alias gemi="gem install"
-alias geml="gem list"
-alias gemp="gem pristine"
-alias gems="gem server"
-alias gemu="gem uninstall"
-alias gemuc="gem update --system && gem update && gem cleanup"
-
-# Section: https://www.alchemists.io/projects/rubysmith:[Rubysmith]
-alias rbb="rubysmith --build"
-
-# Section: https://github.com/colszowka/simplecov:[SimpleCov]
-alias cov="open coverage/index.html"
-
 # Section: https://www.sublimetext.com:[Sublime Text]
 alias e="sublime"
-
-# Section: https://www.gnu.org/software/tar/tar.html:[Tar]
-alias bzc="tar --use-compress-program=pigz --create --preserve-permissions --bzip2 --verbose --file"
-alias bzx="tar --extract --bzip2 --verbose --file"
-
-# Section: https://www.terraform.io:[Terraform]
-alias tf="terraform"
-alias tfa="noti --title 'Terraform Apply' terraform apply"
-alias tfc="terraform console"
-alias tff="terraform fmt"
-alias tfg="terraform graph | dot -Tsvg > tmp/graph.svg && open -a 'Firefox.app' tmp/graph.svg"
-alias tfi="terraform init"
-alias tfo="terraform output"
-alias tfp="noti --title 'Terraform Plan' terraform plan"
-alias tft="terraform taint"
-alias tfu="terraform untaint"
-alias tfv="terraform validate"
-
-# Section: http://tmux.sourceforge.net:[tmux]
-alias tsa="tmux attach-session -t"
-alias tsk="tmux kill-session -t"
-alias tsl="tmux list-sessions"
-alias tsr="tmux rename-session -t"
-
-# Section: https://gitlab.com/procps-ng/procps:[Watch]
-alias wp="watch --interval 1 --color --beep --exec"

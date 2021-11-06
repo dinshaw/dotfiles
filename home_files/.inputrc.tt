@@ -4,7 +4,7 @@
 set bell-style visible
 
 # Use VI edit commands instead of Emacs.
-set editing-mode vi
+set editing-mode emacs
 
 # Use VI key mappings instead of Emacs.
 set keymap vi

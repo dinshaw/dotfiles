@@ -27,8 +27,8 @@ shopt -s histappend
 bind Space:magic-space
 
 # Editors
-export EDITOR=sublime
-export VISUAL=vim
+export EDITOR="subl --wait"
+export VISUAL="subl --wait"
 
 # History
 export HISTFILE="$HOME/.config/bash/history.log"
@@ -97,13 +97,13 @@ export BUNDLE_USER_HOME="$HOME/.local/share/bundler"
 export BUNDLE_USER_PLUGIN="$HOME/.local/share/bundler/plugin"
 export RUBYOPT='-W:deprecated'
 
-# Fast Node Manager
-export FNM_DIR="$HOME/.cache/.fnm"
-eval "$(fnm env)"
+# NVM
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Frum
-export FRUM_DIR="$HOME/.cache/frum"
-eval "$(frum init)"
+# RBENV
+# eval "$(rbenv init - bash)"
 
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color always --exclude .git"
@@ -133,3 +133,12 @@ export PATH=".git/safe/../../bin:$PATH"
 # Zoxide
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
+
+# Sublime Text
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+
+# Chruby
+if [ -n "$BASH_VERSION" ] || [ -n "$ZSH_VERSION" ]; then
+  source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
+  source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
+fi
