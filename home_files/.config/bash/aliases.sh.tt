@@ -46,6 +46,9 @@ alias drd="docker system prune --force && docker buildx prune --force"
 alias dri="docker images"
 alias drp="docker ps --all"
 alias drt="docker tag"
+alias dcr="docker compose run --rm"
+alias dcu="docker compose up"
+
 
 # Section: https://the.exa.website:[Exa]
 alias x1="exa --oneline --all --group-directories-first"
