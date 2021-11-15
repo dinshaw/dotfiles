@@ -91,4 +91,15 @@ After install, the following files will require manual updating:
 
 
 ## Install
-brew install bash, direnv, asciinema, exa, postgres, redis, the_silver_searcher, npm, zoxide, chruby, ruby-install, bat
+brew install bash
+direnv
+asciinema
+exa
+postgres
+redis
+the_silver_searcher
+npm
+zoxide
+chruby
+ruby-install
+bat
