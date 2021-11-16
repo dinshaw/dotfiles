@@ -103,3 +103,4 @@ zoxide
 chruby
 ruby-install
 bat
+fd - find file

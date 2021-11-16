@@ -41,12 +41,13 @@ alias denvs="direnv status"
 # Section: https://www.docker.com:[Docker]
 alias dr="docker"
 alias drb="docker build"
-alias drc="docker compose"
+alias dre="docker exec -it"
 alias drd="docker system prune --force && docker buildx prune --force"
 alias dri="docker images"
 alias drp="docker ps --all"
 alias drt="docker tag"
 alias dcr="docker compose run --rm"
+alias dcre="docker compose restart"
 alias dcu="docker compose up"
 
 
