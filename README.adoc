@@ -93,7 +93,7 @@ After install, the following files will require manual updating:
 ## Install
 brew install bash
 direnv
-asciinema
+asciinema - record terminal
 exa
 postgres
 redis

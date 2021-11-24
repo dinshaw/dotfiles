@@ -44,10 +44,12 @@ alias drb="docker build"
 alias dre="docker exec -it"
 alias drd="docker system prune --force && docker buildx prune --force"
 alias dri="docker images"
+alias drc="docker container"
 alias drp="docker ps --all"
 alias drt="docker tag"
 alias dcr="docker compose run --rm"
 alias dcre="docker compose restart"
+alias dcu="docker compose up"
 alias dcu="docker compose up"
 
 
@@ -209,4 +211,7 @@ alias railse="EDITOR='sublime --wait' rails credentials:edit"
 alias rbct="open tmp/rubycritic/overview.html"
 
 # Section: https://www.sublimetext.com:[Sublime Text]
-alias e="sublime"
+alias e="subl"
+
+# Guard
+alias guards="bundle exec guard --guardfile Guardfile.spring"
