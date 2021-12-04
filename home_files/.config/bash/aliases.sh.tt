@@ -51,6 +51,7 @@ alias dcr="docker compose run --rm"
 alias dcre="docker compose restart"
 alias dcu="docker compose up"
 alias dcu="docker compose up"
+alias dl="docker logs -f --details"
 
 
 # Section: https://the.exa.website:[Exa]
