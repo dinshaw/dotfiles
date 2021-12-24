@@ -1,5 +1,8 @@
 #! /usr/bin/env bash
 
+# Homebrew
+export PATH="/opt/homebrew/bin:$PATH"
+
 export HOMEBREW_PREFIX="$(brew --prefix)"
 
 if [[ BASH_VERSINFO[0] < 4 ]]; then
@@ -7,8 +10,8 @@ if [[ BASH_VERSINFO[0] < 4 ]]; then
 fi
 
 # Editors
-export EDITOR="subl --wait"
-export VISUAL="subl --wait"
+export EDITOR="code --wait"
+export VISUAL="code --wait"
 
 # Environment
 source "$HOME/.config/bash/env.sh"
@@ -52,10 +55,9 @@ if [[ -e "$HOMEBREW_PREFIX/bin/direnv" ]]; then
   eval "$(direnv hook bash)"
 fi
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# n - Node version manage
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH"
 
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color always --exclude .git"
@@ -91,5 +93,3 @@ export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 # Zoxide
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
-
-
