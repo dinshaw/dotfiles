@@ -95,15 +95,26 @@ export BUNDLE_USER_CACHE="$HOME/.cache/bundler"
 export BUNDLE_USER_CONFIG="$HOME/.config/bundler/configuration.yml"
 export BUNDLE_USER_HOME="$HOME/.local/share/bundler"
 export BUNDLE_USER_PLUGIN="$HOME/.local/share/bundler/plugin"
-export RUBYOPT='-W:deprecated'
+# export RUBYOPT='-W:deprecated'
 
 # ASDF
-if [[ -e "$HOMEBREW_PREFIX/bin/asdf" ]]; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
-  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
-  export RUBY_CONFIGURE_OPTS="--with-zlib-dir=/opt/homebrew/opt/zlib --with-openssl-dir=/opt/homebrew/opt/openssl@1.1 --with-readline-dir=/opt/homebrew/opt/readline --with-libyaml-dir=/opt/homebrew/opt/libyaml"
-  export RUBY_CFLAGS="-Wno-error=implicit-function-declaration"
+# if [[ -e "$HOMEBREW_PREFIX/bin/asdf" ]]; then
+#   source "$(brew --prefix asdf)/libexec/asdf.sh"
+#   source "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+#   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+# fi
+
+# Frum
+if [[ -e "$HOMEBREW_PREFIX/bin/frum" ]]; then
+  eval "$(frum init)"
 fi
+
+# n
+if [[ -e "$HOMEBREW_PREFIX/bin/n" ]]; then
+  export N_PREFIX="$HOME/.n"
+  export PATH="$N_PREFIX/bin:$PATH"
+fi
+
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color always --exclude .git"
 export FZF_DEFAULT_OPTS="--multi --ansi"
@@ -112,7 +123,7 @@ export FZF_DEFAULT_OPTS="--multi --ansi"
 export MAKE="make --jobs=$(sysctl -n hw.ncpu)"
 
 # Node
-export PATH="$PATH:$HOMEBREW_PREFIX/share/npm/bin"
+# export PATH="$PATH:$HOMEBREW_PREFIX/share/npm/bin"
 
 # Git
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/configuration"
