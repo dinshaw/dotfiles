@@ -1,10 +1,5 @@
-[advice]
-  detachedHead = false
 [branch]
   autoSetupRebase = always
-[commit]
-  gpgSign = true
-  template = ~/.config/git/commit_message.txt
 [core]
   abbrev = 12
   editor = "$EDITOR --wait"
@@ -66,9 +61,6 @@
   prune = true
   pruneTags = true
   writeCommitGraph = true
-[github]
-  user = <redacted>
-  token = <redacted>
 [grep]
   column = true
   fullname = true
@@ -111,21 +103,3 @@
   enabled = true
 [status]
   showUntrackedFiles = all
-[tag]
-  gpgSign = true
-  sort = version:refname
-[transfer]
-  fsckObjects = true
-[url "https://github.com/"]
-  insteadOf = gh:
-[url "https://github.com/bkuhlmann/"]
-  insteadOf = bk:
-[url "https://git.heroku.com"]
-  insteadOf = heroku:
-[user]
-  email = <redacted>
-  name = <redacted>
-  signingKey = <redacted>
-  useConfigOnly = true
-[includeIf "gitdir:~/Engineering/Companies/Example/"]
-  path = ~/.config/git/profiles/example

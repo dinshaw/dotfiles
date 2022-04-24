@@ -73,8 +73,9 @@ _powerline() {
       local BG_EXIT="$RED_BACKGROUND"
     fi
 
-    PS1="\[$BLACK\]\[$WHITE_BACKGROUND\] \u@\h \[$NORMAL\]" # User@host.
-    PS1+="\[$BLACK\]\[$CYAN_BACKGROUND\] ${PWD##*/} \[$NORMAL\]" # Directory.
+    # PS1="\[$BLACK\]\[$WHITE_BACKGROUND\] \u@\h \[$NORMAL\]" # User@host.
+    # PS1+="\[$BLACK\]\[$CYAN_BACKGROUND\] ${PWD##*/} \[$NORMAL\]" # Directory.
+    PS1="\[$BLACK\]\[$CYAN_BACKGROUND\] ${PWD##*/} \[$NORMAL\]" # Directory.
 
     if [[ -d .git ]]; then
       PS1+="\[$SLATE_BACKGROUND\] $(git config user.email | egrep --only-matching '[^@]+$') \[$NORMAL\]" # Git Email Domain.
@@ -88,7 +89,7 @@ _powerline() {
     PS1+="\[$BG_EXIT\] $OS_SYMBOL \[$NORMAL\] "
   }
 
-  PROMPT_COMMAND=ps1
+  PROMPT_COMMAND="ps1;$PROMPT_COMMAND"
 }
 
 _powerline
