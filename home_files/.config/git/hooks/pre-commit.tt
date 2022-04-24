@@ -15,13 +15,13 @@ source "$HOME/.config/git/hooks/extensions/rspec.sh"
 source "$HOME/.config/git/hooks/extensions/ruby.sh"
 source "$HOME/.config/git/hooks/extensions/dead_end.sh"
 
-capybara_save_and_open_page
-elm_debug
-java_script_alert
-java_script_console
-java_script_debugger
-rspec_dotfile
-rspec_focus
-rspec_order
-ruby_debug
-ruby_dead_end
+# capybara_save_and_open_page
+# elm_debug
+# java_script_alert
+# java_script_console
+# java_script_debugger
+# rspec_dotfile
+# rspec_focus
+# rspec_order
+# ruby_debug
+# ruby_dead_end

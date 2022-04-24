@@ -298,7 +298,7 @@ alias rbh="rubysmith --help"
 alias cov="open coverage/index.html"
 
 # Section: https://www.sublimetext.com:[Sublime Text]
-alias e="sublime"
+alias e="code"
 
 # Section: https://www.gnu.org/software/tar/tar.html:[Tar]
 alias bzc="tar --use-compress-program=pigz --create --preserve-permissions --bzip2 --verbose --file"
