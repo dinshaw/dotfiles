@@ -10,4 +10,4 @@ IFS=$'\n\t'
 source "$HOME/.config/git/hooks/extensions/support.sh"
 source "$HOME/.config/git/hooks/extensions/ctags.sh"
 
-ctags_rebuild
+# ctags_rebuild

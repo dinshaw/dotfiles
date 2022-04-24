@@ -80,7 +80,7 @@ _powerline() {
     PS1+="\[$BLUE_BACKGROUND\] $(ruby -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
 
     if [[ -d .git ]]; then
-      PS1+="\[$SLATE_BACKGROUND\] $(git config user.email | egrep --only-matching '[^@]+$') \[$NORMAL\]" # Git Email Domain.
+      # PS1+="\[$SLATE_BACKGROUND\] $(git config user.email | egrep --only-matching '[^@]+$') \[$NORMAL\]" # Git Email Domain.
       PS1+="\[$BLUE_BACKGROUND\]$(_git_branch_info)\[$NORMAL\]" # Git Branch Info.
       PS1+="\[$YELLOW\]\[$BLUE_BACKGROUND\]$(_git_stash_info)\[$NORMAL\]" # Git Stash Info.
     fi

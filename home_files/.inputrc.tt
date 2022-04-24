@@ -4,10 +4,10 @@
 set bell-style visible
 
 # Use VI edit commands instead of Emacs.
-set editing-mode vi
+set editing-mode emacs
 
 # Use VI key mappings instead of Emacs.
-set keymap vi
+set keymap emacs
 
 # Show all auto-complete results at once.
 set page-completions off
