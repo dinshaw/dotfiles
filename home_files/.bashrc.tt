@@ -137,3 +137,14 @@ export PATH=".git/safe/../../bin:$PATH"
 # Zoxide
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
+
+# Override zoxide's cd to trigger unix `cd` so that other programs work
+# E.g., frum won't respect the .ruby-version because it doesn't pick up the cd
+function __zoxide_cd {
+  # Original implementation...
+  # https://github.com/ajeetdsouza/zoxide/blob/df148c834fa0eb4a99cac18720e05059bf771430/templates/bash.txt#L17-L21
+  command cd "$@"
+  RET=$?
+  cd .
+  return $RET
+}
