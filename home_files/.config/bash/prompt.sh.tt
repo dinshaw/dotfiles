@@ -77,7 +77,8 @@ _powerline() {
     # PS1+="\[$BLACK\]\[$CYAN_BACKGROUND\] ${PWD##*/} \[$NORMAL\]" # Directory.
     PS1="\[$BLACK\]\[$CYAN_BACKGROUND\] ${PWD##*/} \[$NORMAL\]" # Directory.
 
-    PS1+="\[$SILVER_BACKGROUND\] $(ruby -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
+    PS1+="\[$BLACK_BACKGROUND\] n$(node -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
+    PS1+="\[$SILVER_BACKGROUND\] r$(ruby -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
 
     if [[ -d .git ]]; then
       # PS1+="\[$SLATE_BACKGROUND\] $(git config user.email | egrep --only-matching '[^@]+$') \[$NORMAL\]" # Git Email Domain.
