@@ -73,7 +73,7 @@ _powerline() {
       local BG_EXIT="$RED_BACKGROUND"
     fi
 
-    PS1="\[$BLACK\]\[$CYAN_BACKGROUND\]\w \[$NORMAL\]" # Directory.
+    PS1="\[$BLACK\]\[$CYAN_BACKGROUND\] \w \[$NORMAL\]" # Directory.
     PS1+="\[$BLACK_BACKGROUND\] n$(node -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
     PS1+="\[$RED_BACKGROUND\] r$(ruby -v  | perl -pe '($_)=/([0-9]+([.][0-9]+)+)/') \[$NORMAL\]" # Ruby Version.
 
@@ -89,7 +89,9 @@ _powerline() {
     PS1+="\[$BG_EXIT\] $OS_SYMBOL \[$NORMAL\] "
   }
 
-  PROMPT_COMMAND=ps1
+  # PROMPT_COMMAND=ps1
+  PROMPT_COMMAND="ps1;$PROMPT_COMMAND"
+
 }
 
 _powerline

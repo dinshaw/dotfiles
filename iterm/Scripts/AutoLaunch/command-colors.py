@@ -25,9 +25,13 @@ async def main(connection):
                 connection, iterm2.VariableScopes.SESSION, "commandLine", session_id
                 ) as mon:
                 command_str = await mon.async_get()
-
-            if re.search("rails s", command_str):
+                print(command_str)
+            if re.search("rails s|bin/dev|localhost:3000", command_str):
                 await SetPresetInSession(connection, session, 'Solarized Light')
+            elif re.search("rails c", command_str):
+                await SetPresetInSession(connection, session, 'Borland')
+            else:
+                await SetPresetInSession(connection, session, 'Arthur')
 
     await iterm2.EachSessionOnceMonitor.async_foreach_session_create_task(app, monitor)
 
