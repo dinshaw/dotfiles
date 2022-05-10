@@ -20,10 +20,10 @@ async def SetPresetInSession(connection, session, preset_name):
 
 async def main(connection):
     app = await iterm2.async_get_app(connection)
-    print(app)
 
     async def monitor(session_id):
         session = app.get_session_by_id(session_id)
+
         if not session:
             print("No session found.")
             return
@@ -35,8 +35,8 @@ async def main(connection):
                 command_str = await mon.async_get()
                 print("CMD:", command_str)
 
-            if re.search("rails s", command_str):
-                print ("match rails s")
+            if re.search("rails s|ruby bin/vite dev", command_str):
+                print ("match rails s|bin/dev")
                 await SetPresetInSession(connection, session, 'Solarized Light')
             elif re.search("rails c", command_str):
                 print ("match rails c")
@@ -44,5 +44,7 @@ async def main(connection):
             elif re.search("-bash", command_str):
                 print ("match bash")
                 await SetPresetInSession(connection, session, 'Arthur')
+
+    await iterm2.EachSessionOnceMonitor.async_foreach_session_create_task(app, monitor)
 
 iterm2.run_forever(main)
