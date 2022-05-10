@@ -464,17 +464,6 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0x74-0x100000-0x28</key>
-		<dict>
-			<key>Action</key>
-			<integer>61</integer>
-			<key>Label</key>
-			<string></string>
-			<key>Text</key>
-			<string></string>
-			<key>Version</key>
-			<integer>1</integer>
-		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
@@ -809,7 +798,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>

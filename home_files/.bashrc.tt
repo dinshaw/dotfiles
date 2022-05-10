@@ -107,6 +107,7 @@ export BUNDLE_USER_PLUGIN="$HOME/.local/share/bundler/plugin"
 # Frum
 if [[ -e "$HOMEBREW_PREFIX/bin/frum" ]]; then
   eval "$(frum init)"
+  eval "$(frum local)"
 fi
 
 # n
@@ -152,3 +153,5 @@ function __zoxide_cd {
 
 # Postgres app
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+
+ulimit -Sn 10240
