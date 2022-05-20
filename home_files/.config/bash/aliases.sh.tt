@@ -274,7 +274,9 @@ alias rbsr="ruby $HOME/Engineering/Misc/snippet.rb"
 
 # Section: https://rubyonrails.org:[Ruby on Rails]
 alias railsb="rails console --sandbox"
-alias railse="EDITOR='sublime --wait' rails credentials:edit"
+alias railse="EDITOR='code --wait' rails credentials:edit"
+alias rdbmt="RAILS_ENV=test rails db:migrate"
+alias rdbm="rails db:migrate"
 
 # Section: https://github.com/whitesmith/RubyCritic:[RubyCritic]
 alias rbct="open tmp/rubycritic/overview.html"

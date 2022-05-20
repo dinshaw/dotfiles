@@ -630,7 +630,7 @@ gbf() {
 # Label: Git Branch List
 # Description: List local and remote branch details.
 gbl() {
-  local format="%(refname)|%(color:yellow)%(objectname)|%(color:reset)|%(color:blue bold)%(authorname)|%(color:green)|%(committerdate:relative)"
+  local format="%(refname)|%(color:yellow)%(objectname:short)|%(color:reset)|%(color:blue bold)%(authorname)|%(color:green)|%(committerdate:relative)"
 
   git for-each-ref --sort="authordate:iso8601" \
                    --sort="authorname" \
