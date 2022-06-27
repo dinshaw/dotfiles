@@ -1837,46 +1837,46 @@ gync() {
 # Label: GitHub
 # Description: View GitHub details for current project.
 # Parameters: $1 (optional) - The option selection, $2 (optional) - The option input.
-gh() {
-  if [[ -d ".git" ]]; then
-    while true; do
-      if [[ $# == 0 ]]; then
-        printf "\n%s\n" "Usage: gh OPTION"
-        printf "\n%s\n" "GitHub Options (default browser):"
-        printf "%s\n" "  o: Open repository."
-        printf "%s\n" "  i: Open repository issues."
-        printf "%s\n" "  c: Open repository commits. Options:"
-        printf "%s\n" "     HASH: Open commit."
-        printf "%s\n" "  f: Copy repository file URL."
-        printf "%s\n" "  b: Open repository branches. Options:"
-        printf "%s\n" "     c: Open current branch."
-        printf "%s\n" "     d: Open diff for current branch."
-        printf "%s\n" "     r: Open pull request for current branch."
-        printf "%s\n" "  t: Open repository tags."
-        printf "%s\n" "  r: Open repository pull requests."
-        printf "%s\n" "     NUMBER: Open pull request."
-        printf "%s\n" "     l: List pull requests."
-        printf "%s\n" "  w: Open repository wiki."
-        printf "%s\n" "  p: Open repository pulse."
-        printf "%s\n" "  g: Open repository graphs."
-        printf "%s\n" "  s: Open repository settings."
-        printf "%s\n" "  u: Print and copy repository URL. Options:"
-        printf "%s\n" "     HASH: Print and copy commit URL."
-        printf "%s\n" "     l: Print and copy last commit URL."
-        printf "%s\n\n" "  q: Quit/Exit."
-        read -p "Enter selection: " response
-        printf "\n"
-        _process_gh_option $response "$2"
-      else
-        _process_gh_option "$1" "$2" "$3"
-      fi
-      break
-    done
-  else
-    printf "%s\n" "ERROR: Not a Git repository!"
-    return 1
-  fi
-}
+# gh() {
+#   if [[ -d ".git" ]]; then
+#     while true; do
+#       if [[ $# == 0 ]]; then
+#         printf "\n%s\n" "Usage: gh OPTION"
+#         printf "\n%s\n" "GitHub Options (default browser):"
+#         printf "%s\n" "  o: Open repository."
+#         printf "%s\n" "  i: Open repository issues."
+#         printf "%s\n" "  c: Open repository commits. Options:"
+#         printf "%s\n" "     HASH: Open commit."
+#         printf "%s\n" "  f: Copy repository file URL."
+#         printf "%s\n" "  b: Open repository branches. Options:"
+#         printf "%s\n" "     c: Open current branch."
+#         printf "%s\n" "     d: Open diff for current branch."
+#         printf "%s\n" "     r: Open pull request for current branch."
+#         printf "%s\n" "  t: Open repository tags."
+#         printf "%s\n" "  r: Open repository pull requests."
+#         printf "%s\n" "     NUMBER: Open pull request."
+#         printf "%s\n" "     l: List pull requests."
+#         printf "%s\n" "  w: Open repository wiki."
+#         printf "%s\n" "  p: Open repository pulse."
+#         printf "%s\n" "  g: Open repository graphs."
+#         printf "%s\n" "  s: Open repository settings."
+#         printf "%s\n" "  u: Print and copy repository URL. Options:"
+#         printf "%s\n" "     HASH: Print and copy commit URL."
+#         printf "%s\n" "     l: Print and copy last commit URL."
+#         printf "%s\n\n" "  q: Quit/Exit."
+#         read -p "Enter selection: " response
+#         printf "\n"
+#         _process_gh_option $response "$2"
+#       else
+#         _process_gh_option "$1" "$2" "$3"
+#       fi
+#       break
+#     done
+#   else
+#     printf "%s\n" "ERROR: Not a Git repository!"
+#     return 1
+#   fi
+# }
 
 # Label: GitHub Pull Request (all)
 # Description: Open pull requests for all projects in current directory (non-default branches only).
