@@ -55,6 +55,7 @@ alias dutia="duti $HOME/.config/duti/configuration.duti"
 
 # Section Rails
 alias rt="bundle exec rails test"
+alias rts="bundle exec rails test:system"
 # Section: https://the.exa.website:[Exa]
 alias x1="exa --oneline --all --group-directories-first"
 alias x="exa --all --all --long --header --group --group-directories-first --time-style long-iso --git"
@@ -120,12 +121,14 @@ alias gdtm='git difftool origin/$(_git_branch_default)'
 alias gdw="git diff --color-words"
 alias gel="git rm"
 alias gelc="git rm --cached" # Removes previously tracked file from index after being added to gitignore.
+alias fixup="!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
 alias ges="git reset"
 alias gf="git fetch"
 alias gg="git grep"
 alias gget="git config --get"
 alias gi="git init && git config --global --add maintenance.repo $PWD"
 alias gl='git log --graph --pretty=format:"$(_git_log_line_format)"'
+alias gln='git log --graph --pretty=format:"$(_git_log_line_format)" --name-only'
 alias glame="git blame -M -C -C -C"
 alias glean="git clean -d --force"
 alias glf='git fetch && git log --reverse --no-merges --pretty=format:"$(_git_log_line_format)" ..@{upstream}'
@@ -254,6 +257,7 @@ alias railsb="rails console --sandbox"
 alias railse="EDITOR='code --wait' rails credentials:edit"
 alias rdbmt="RAILS_ENV=test rails db:migrate"
 alias rdbm="rails db:migrate"
+alias r5="bundle exec rails s -p 5555"
 
 # Section: https://github.com/whitesmith/RubyCritic:[RubyCritic]
 alias rbct="open tmp/rubycritic/overview.html"
@@ -304,3 +308,4 @@ alias tsr="tmux rename-session -t"
 
 # Section: https://gitlab.com/procps-ng/procps:[Watch]
 alias wp="watch --interval 1 --color --beep --exec"
+alias dsdb="docker stop application_database_1"
