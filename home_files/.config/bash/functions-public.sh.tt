@@ -857,6 +857,19 @@ gcfi() {
   gcf "$selected_commit" "$kind"
 }
 
+gcfi2() {
+  local kind="$1"
+  local commits=($(_git_branch_shas))
+
+  local commit=$(_git_commit_options "${commits[*]}" | fzf | sed -E 's/^([0-9]+):/\1/' | awk '{print $1}' )
+
+  printf "\n"
+  local selected_commit=${commits[$((commit - 1))]}
+  printf "%s\n" "Selected commit: $selected_commit"
+  gcf "$selected_commit" "$kind"
+}
+
+
 # Label: Git Diff Files
 # Description: List all added/changed files on current branch.
 # Parameters: None.
@@ -2145,44 +2158,6 @@ rakea() {
   done < <(ls -A1)
 }
 
-#-------------------------------------#
-# Section: https://rspec.info:[RSpec] #
-#-------------------------------------#
-
-# Label: RSpec (all)
-# Description: Run RSpec for projects in current directory.
-rsall() {
-  while read -r project; do
-    (
-      cd "$project"
-
-      if [[ -f "Gemfile.lock" && -d "spec" ]]; then
-        local json=$(rspec spec --format json)
-        local examples=$(printf "%s" "$json" | jq ".summary.example_count" )
-        local failures=$(printf "%s" "$json" | jq ".summary.failure_count" )
-        local pending=$(printf "%s" "$json" | jq ".summary.pending_count" )
-        local duration=$(printf "%s" "$json" | jq ".summary.duration" )
-
-        # Prints project (cyan).
-        printf "\033[36m${project}\033[m: "
-
-        # Prints total examples (white).
-        printf "$examples examples, "
-
-        # Prints total failures (red).
-        _toggle_total_color "$failures" "failures" "\033[31m"
-        printf ", "
-
-        # Prints total pending (yellow).
-        _toggle_total_color "$pending" "pending" "\033[33m"
-        printf ", "
-
-        # Prints total duration (white).
-        printf "%s\n" "$duration seconds."
-      fi
-    )
-  done < <(ls -A1)
-}
 
 # Label: RSpec Bisect
 # Description: Debug RSpec failure using bisect to automatically determine where failure is occuring.
@@ -2202,6 +2177,17 @@ rsd() {
 
   while [ $? == 0 ]; do
     rspec "$subject"
+  done
+}
+
+# Label: RSpec Debug
+# Description: Debug intermittent RSpec failure(s) by running spec(s) until failure is detected.
+# Parameters: $1 (optional) - The spec to debug. Default: "spec".
+mtd() {
+  local test_file=$1
+
+  while [ $? == 0 ]; do
+    bundle exec rails test "$test_file"
   done
 }
 
