@@ -1,4 +1,3 @@
-!
 :toc: macro
 :toclevels: 5
 :figure-caption!:

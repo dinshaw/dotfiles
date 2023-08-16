@@ -839,7 +839,7 @@ gcff() {
 # Label: Git Commit Fix (interactive)
 # Description: Select which commit to fix within current feature branch.
 # Parameters: $1 (optional) - (a)mend or (r)eword.
-gcfi() {
+gcfi_old() {
   local kind="$1"
   local commits=($(_git_branch_shas))
 
@@ -857,7 +857,7 @@ gcfi() {
   gcf "$selected_commit" "$kind"
 }
 
-gcfi2() {
+gcfi() {
   local kind="$1"
   local commits=($(_git_branch_shas))
 
