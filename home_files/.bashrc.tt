@@ -39,6 +39,8 @@ export HISTIGNORE="#*:..:...:c:h:l:l1:p:pwd:gst:gd:exit:* --help" # Exclude mund
 
 # Homebrew
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 export HOMEBREW_BAT=1
 export HOMEBREW_BOOTSNAP=1
 export HOMEBREW_CURL_RETRIES=3
@@ -112,19 +114,6 @@ if [[ -e "$HOMEBREW_PREFIX/bin/asdf" ]]; then
   source "$HOMEBREW_PREFIX/opt/asdf/etc/bash_completion.d/asdf.bash"
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-fi
-
-# Frum
-# if [[ -e "$HOMEBREW_PREFIX/bin/frum" ]]; then
-#   eval "$(frum init)"
-#   eval "$(frum local)"
-# fi
-
-
-# n
-if [[ -e "$HOMEBREW_PREFIX/bin/n" ]]; then
-  export N_PREFIX="$HOME/.n"
-  export PATH="$N_PREFIX/bin:$PATH"
 fi
 
 # FZF
