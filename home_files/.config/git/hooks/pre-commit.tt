@@ -25,3 +25,4 @@ source "$HOME/.config/git/hooks/extensions/dead_end.sh"
 # rspec_order
 # ruby_debug
 # ruby_dead_end
+minitest_focus
