@@ -255,7 +255,7 @@ alias rbsr="ruby $HOME/Engineering/Misc/snippet.rb"
 
 # Section: https://rubyonrails.org:[Ruby on Rails]
 alias railsb="rails console --sandbox"
-alias railse="EDITOR='code --wait' rails credentials:edit"
+alias railse="EDITOR='e --wait' rails credentials:edit"
 alias rdbmt="RAILS_ENV=test rails db:migrate"
 alias rdbm="rails db:migrate"
 alias r5="bundle exec rails s -p 5555"

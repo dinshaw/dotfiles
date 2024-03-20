@@ -27,9 +27,9 @@ shopt -s histappend
 bind Space:magic-space
 
 # Editors
-export EDITOR=code
-export VISUAL=code
-
+export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
+export VISUAL="code --wait"
+export EDITOR="$VISUAL"
 # History
 export HISTFILE="$HOME/.config/bash/history.log"
 export HISTTIMEFORMAT="%F %T " # Use YYYY-MM-DD HH:MM:SS date/time format.
@@ -118,6 +118,7 @@ fi
 # FZF
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color always --exclude .git"
 export FZF_DEFAULT_OPTS="--multi --ansi"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Make
 # export MAKE="make --jobs=$(sysctl -n hw.ncpu)"
@@ -142,8 +143,6 @@ eval "$(zoxide init bash)"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 ulimit -Sn 10240
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Perl
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
