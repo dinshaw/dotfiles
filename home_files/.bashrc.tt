@@ -52,6 +52,10 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_PREFIX="$(brew --prefix)"
+export RUBY_CONFIGURE_OPTS="--enable-yjit"
+
+# Postgres
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
 # Environment
 source "$HOME/.config/bash/env.sh"
@@ -84,7 +88,7 @@ then
 fi
 
 # Docker
-export DOCKER_CONFIG=$HOME/.config/docker
+export DOCKER_CONFIG="$HOME/.config/docker"
 
 # OpenSSL
 export PATH="$HOMEBREW_PREFIX/opt/openssl/bin:$PATH"
@@ -123,8 +127,6 @@ export FZF_DEFAULT_OPTS="--multi --ansi"
 # Make
 # export MAKE="make --jobs=$(sysctl -n hw.ncpu)"
 
-# Node
-# export PATH="$PATH:$HOMEBREW_PREFIX/share/npm/bin"
 
 # Git
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/configuration"
@@ -139,8 +141,6 @@ export PATH=".git/safe/../../bin:$PATH"
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
 
-# Postgres app
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 ulimit -Sn 10240
 
