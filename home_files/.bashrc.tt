@@ -28,7 +28,7 @@ bind Space:magic-space
 
 # Editors
 export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-export VISUAL="code --wait"
+export VISUAL="cursor --wait"
 export EDITOR="$VISUAL"
 # History
 export HISTFILE="$HOME/.config/bash/history.log"
