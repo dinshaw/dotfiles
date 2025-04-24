@@ -28,14 +28,6 @@ alias bo="bundle outdated --only-explicit"
 alias br="bundle remove"
 alias bu="bundle update"
 
-# Section: https://crystal-lang.org:[Crystal]
-alias cr="crystal"
-alias crb="crystal build"
-alias crd="crystal docs"
-alias crdo="open docs/index.html"
-alias crr="crystal run"
-alias crs="crystal spec"
-
 # Section: https://direnv.net:[direnv]
 alias denva="direnv allow"
 alias denvr="direnv reload"
@@ -282,7 +274,7 @@ alias rbh="rubysmith --help"
 alias cov="open coverage/index.html"
 
 # Section: https://www.sublimetext.com:[Sublime Text]
-alias e="code"
+alias e="cursor"
 
 # Section: https://www.gnu.org/software/tar/tar.html:[Tar]
 alias bzc="tar --use-compress-program=pigz --create --preserve-permissions --bzip2 --verbose --file"
