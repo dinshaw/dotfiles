@@ -66,8 +66,5 @@ alias rt="bundle exec rails test"
 alias rts="bundle exec rails test:system"
 alias r5="bundle exec rails s -p 5555"
 
-# ripgrep
-alias rgf="rg --files --glob"
-
 # Editor
 alias e="cursor"
