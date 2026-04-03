@@ -1,42 +1,5 @@
 #! /usr/bin/env bash
 
-#------------------#
-# Section: General #
-#------------------#
-
-# Label: Clip and Print
-# Description: Copy input to clipboard and print what what was copied (best used with a pipe).
-# Parameters: $1 (optional) - Displays "(copied to cliboard)" on a new line. Default: false.
-_copy_and_print() {
-  local delimiter=${1:-' '}
-  local message="$delimiter(copied to clipboard)\n"
-
-  pbcopy && printf "%s" "$(pbpaste)" && printf "$message"
-}
-
-# Label: Print Black on White
-# Description: Print black text on a white background.
-# Parameters: $1 (required) - Content to print.
-_print_black_on_white() {
-  local content="$1"
-  printf "\e[0;30m\e[48;5;255m$content\033[m"
-}
-
-# Label: Toggle Total Color
-# Description: Format and conditionally color the total.
-# Parameters: $1 (required) - The total, $2(required) - The label, $3 (required) - The color.
-_toggle_total_color() {
-  local total="$1"
-  local label="$2"
-  local color="$3"
-
-  if [[ $total -gt 0 ]]; then
-    printf "$color$total $label\033[m"
-  else
-    printf "$total $label"
-  fi
-}
-
 #------------------------------------#
 # Section: https://git-scm.com:[Git] #
 #------------------------------------#
@@ -96,35 +59,6 @@ _git_branch_shas() {
   IFS=$ifs_original
 }
 
-# Label: Git Commit Count Since Last Tag
-# Description: Answer commit count since last tag for project.
-# Parameters: $1 (optional) - The output prefix. Default: null., $2 (optional) - The output suffix. Default: null.
-_git_commit_count_since_last_tag() {
-  local prefix="$1"
-  local suffix="$2"
-  local count=$(_git_commits_since_last_tag | wc -l | xargs -n 1)
-
-  if [[ -n $count ]]; then
-    if [[ -n "$prefix" ]]; then
-      printf "\033[36m${prefix}\033[m: "
-    fi
-
-    if [[ $count -ge 30 ]]; then
-      printf "\033[31m$count\033[m"
-    elif [[ $count -ge 20 && $count -le 29 ]]; then
-      printf "\033[1;31m$count\033[m"
-    elif [[ $count -ge 10 && $count -le 19 ]]; then
-      printf "\033[33m$count\033[m"
-    else
-      printf "$count"
-    fi
-
-    if [[ -n "$suffix" ]]; then
-      printf "$suffix"
-    fi
-  fi
-}
-
 # Label: Git Commit Last
 # Description: Answer last commit for current branch.
 _git_commit_last() {
@@ -152,56 +86,6 @@ _git_commit_options() {
     printf "%s\n" "$option: $(git log --color --pretty=format:"$(_git_log_line_format)" -n1 $commit)"
     counter=$((counter + 1))
   done
-}
-
-# Label: Git Commit Root
-# Description: Answer root commit of entire repository.
-_git_commit_root() {
-  git rev-list --pretty=format:%h --max-parents=0 HEAD | rg --invert-match "^commit"
-}
-
-# Label: Git Commits Since Last Tag
-# Description: Answer commit history since last tag for project.
-_git_commits_since_last_tag() {
-  if [[ $(git tag) ]]; then
-    git log --oneline --reverse --format='%C(yellow)%h%Creset %s' $(git describe --abbrev=0 --tags --always)..HEAD
-  else
-    git log --oneline --reverse --format='%C(yellow)%h%Creset %s'
-  fi
-}
-
-# Label: Git File Commits
-# Description: Print file commit history (with optional diff support).
-# Parameters: $1 (required) - The file path.
-_git_file_commits() {
-  local commits=("${!1}")
-  local file="$2"
-  local commit_total=${#commits[@]}
-  local option_padding=${#commit_total}
-  local counter=1
-
-  _git_commit_options "${commits[*]}"
-
-  read -r -p "Enter selection: " response
-  if [[ "$response" == 'q' ]]; then
-    return
-  fi
-
-  printf "\n"
-  local selected_commit=${commits[$((response - 1))]}
-  _git_show_details $selected_commit
-
-  printf "\n"
-  read -p "View diff (y = yes, n = no)? " response
-  if [[ "$response" == 'y' ]]; then
-    gdt $selected_commit^! -- "$file"
-  fi
-}
-
-# Label: Git Last Tag Info
-# Description: Answer last tag for project (including commits added since tag was created).
-_git_last_tag_info() {
-  printf "%s\n" "$(git describe --tags --always) ($(_git_commit_count_since_last_tag) commits since)"
 }
 
 # Label: Git Log Details Format

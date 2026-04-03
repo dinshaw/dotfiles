@@ -38,17 +38,15 @@ export HISTIGNORE="#*:..:...:c:h:l:l1:p:pwd:gst:gd:exit:* --help"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export HOMEBREW_PREFIX="/opt/homebrew"
 export HOMEBREW_BAT=1
 export HOMEBREW_BOOTSNAP=1
 export HOMEBREW_CURL_RETRIES=3
-export HOMEBREW_FORCE_BREWED_CURL=1
-export HOMEBREW_FORCE_BREWED_GIT=1
 export HOMEBREW_INSTALL_FROM_API=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_PREFIX="$(brew --prefix)"
 export RUBY_CONFIGURE_OPTS="--enable-yjit"
 
 # Postgres

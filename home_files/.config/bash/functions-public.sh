@@ -128,10 +128,18 @@ gbc() {
 
   if [[ "$name" ]]; then
     git switch --create "$name" --track
-    printf "%s" "$name" | _copy_and_print
   else
     printf "%s\n" "ERROR: Branch name must be supplied."
     return 1
+  fi
+}
+
+# Label: Git Fixup
+# Description: Select recent commit via fzf and create a fixup commit for it.
+fixup() {
+  local sha=$(git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7)
+  if [[ -n "$sha" ]]; then
+    git commit --fixup "$sha"
   fi
 }
 

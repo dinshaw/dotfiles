@@ -46,10 +46,11 @@ alias gdm='git diff origin/$(_git_branch_default)'
 alias gdo='git diff --name-only | uniq | xargs $EDITOR'
 alias gdw="git diff --color-words"
 alias gf="git fetch"
-alias fixup="git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup"
+alias gdt="git difftool"
 alias gl='git log --graph --pretty=format:"$(_git_log_line_format)"'
 alias gln='git log --graph --pretty=format:"$(_git_log_line_format)" --name-only'
 alias gpf="git push --force-with-lease"
+alias gpo="git push --set-upstream origin"
 alias gpu="git pull"
 alias gpuo="git pull origin"
 alias gpuom='git pull origin $(_git_branch_default)'
