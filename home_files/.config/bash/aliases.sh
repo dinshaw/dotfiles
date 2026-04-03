@@ -57,7 +57,8 @@ alias gpuom='git pull origin $(_git_branch_default)'
 alias gr="git restore"
 alias gst="git status --short --branch"
 
-# Rails
+# Ruby / Rails
+alias be="bundle exec"
 alias railsb="rails console --sandbox"
 alias railse="EDITOR='e --wait' rails credentials:edit"
 alias rdbm="rails db:migrate"
