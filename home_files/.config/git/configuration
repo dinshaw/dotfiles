@@ -3,7 +3,6 @@
 [core]
   abbrev = 12
   editor = "$EDITOR --wait"
-  hooksPath = ~/.config/git/hooks
   pager = delta
   quotePath = false
   untrackedCache = true
