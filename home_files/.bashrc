@@ -23,19 +23,16 @@ shopt -s globstar
 # The history list is appended (instead of being overwritten) as defined by the HISTFILE variable.
 shopt -s histappend
 
-# Enables history expansion with space (i.e. `!!<space>`).
-# bind Space:magic-space
-
 # Editors
-export PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
 export VISUAL="cursor --wait"
 export EDITOR="$VISUAL"
+
 # History
 export HISTFILE="$HOME/.config/bash/history.log"
-export HISTTIMEFORMAT="%F %T " # Use YYYY-MM-DD HH:MM:SS date/time format.
-export HISTCONTROL="erasedups:ignoreboth" # Remove duplicate entries.
-export HISTSIZE=10000 # Keep lengthy command history.
-export HISTIGNORE="#*:..:...:c:h:l:l1:p:pwd:gst:gd:exit:* --help" # Exclude mundane commands.
+export HISTTIMEFORMAT="%F %T "
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTSIZE=10000
+export HISTIGNORE="#*:..:...:c:h:l:l1:p:pwd:gst:gd:exit:* --help"
 
 # Homebrew
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
@@ -70,7 +67,7 @@ source "$HOME/.config/bash/aliases.sh"
 source "$HOME/.config/bash/functions-private.sh"
 source "$HOME/.config/bash/functions-public.sh"
 
-# Command Prompt (http://jonisalonen.com/2012/your-bash-prompt-needs-this)
+# Command Prompt
 source "$HOME/.config/bash/prompt.sh"
 
 # Bash Completion
@@ -101,18 +98,7 @@ if [[ -e "$HOMEBREW_PREFIX/bin/direnv" ]]; then
   eval "$(direnv hook bash)"
 fi
 
-# Exa
-export EXA_STRICT=true
-export EXA_COLORS="da=1;34:di=32:gm=33:gd=31"
-
-# Ruby
-# export BUNDLE_USER_CACHE="$HOME/.cache/bundler"
-# export BUNDLE_USER_CONFIG="$HOME/.config/bundler/configuration.yml"
-# export BUNDLE_USER_HOME="$HOME/.local/share/bundler"
-# export BUNDLE_USER_PLUGIN="$HOME/.local/share/bundler/plugin"
-# export RUBYOPT='-W:deprecated'
-
-# ASDF
+# mise
 if [[ -e "$HOMEBREW_PREFIX/bin/mise" ]]; then
   eval "$(mise activate bash)"
 fi
@@ -121,10 +107,6 @@ fi
 export FZF_DEFAULT_COMMAND="fd --type file --follow --hidden --color always --exclude .git"
 export FZF_DEFAULT_OPTS="--multi --ansi"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Make
-# export MAKE="make --jobs=$(sysctl -n hw.ncpu)"
-
 
 # Git
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/configuration"
@@ -139,11 +121,7 @@ export PATH=".git/safe/../../bin:$PATH"
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
 
-
 ulimit -Sn 10240
-
-# Perl
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 # Rust
 export PATH="$HOME/.local/bin:$PATH"
