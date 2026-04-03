@@ -3,7 +3,6 @@
 [core]
   abbrev = 12
   editor = "$EDITOR --wait"
-  hooksPath = ~/.config/git/hooks
   pager = delta
   quotePath = false
   untrackedCache = true
@@ -68,7 +67,6 @@
   threads = 3
 [init]
   defaultBranch = main
-  templateDir = ~/.config/git/template
 [interactive]
   diffFilter = delta --color-only
   singleKey = true
