@@ -21,4 +21,18 @@ find "$DOTFILES_DIR/home_files" -type f | while read -r source_file; do
   printf "  %s -> %s\n" "$dest_file" "$source_file"
 done
 
+# Set up env.sh if it doesn't exist yet
+ENV_FILE="$HOME/.config/bash/env.sh"
+if [[ ! -f "$ENV_FILE" ]]; then
+  mkdir -p "$(dirname "$ENV_FILE")"
+  printf "#! /usr/bin/env bash\n\n" > "$ENV_FILE"
+
+  read -r -p "Font Awesome token (enter to skip): " fa_token
+  if [[ -n "$fa_token" ]]; then
+    printf "export FONTAWESOME_TOKEN=\"%s\"\n" "$fa_token" >> "$ENV_FILE"
+  fi
+
+  printf "  Created %s\n" "$ENV_FILE"
+fi
+
 printf "Done!\n"
