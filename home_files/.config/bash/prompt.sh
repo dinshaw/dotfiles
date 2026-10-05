@@ -89,8 +89,9 @@ _powerline() {
     PS1+="\[$BG_EXIT\] $OS_SYMBOL \[$NORMAL\] "
   }
 
-  # PROMPT_COMMAND=ps1
-  PROMPT_COMMAND="ps1;$PROMPT_COMMAND"
+  if [[ "${PROMPT_COMMAND:-}" != *"ps1"* ]]; then
+    PROMPT_COMMAND="ps1${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+  fi
 
 }
 

@@ -24,7 +24,7 @@ shopt -s globstar
 shopt -s histappend
 
 # Editors
-export VISUAL="cursor --wait"
+export VISUAL="cursor --classic -n --wait"
 export EDITOR="$VISUAL"
 
 # History
@@ -65,9 +65,6 @@ source "$HOME/.config/bash/aliases.sh"
 source "$HOME/.config/bash/functions-private.sh"
 source "$HOME/.config/bash/functions-public.sh"
 
-# Command Prompt
-source "$HOME/.config/bash/prompt.sh"
-
 # Bash Completion
 if type brew &>/dev/null
 then
@@ -83,7 +80,10 @@ then
 fi
 
 # Docker
-export DOCKER_CONFIG="$HOME/.config/docker"
+# NOTE: DOCKER_CONFIG pointed at ~/.config/docker, which was never created, so the
+# CLI found no cli-plugins there and `docker compose`/buildx/scout were all missing.
+# Unset means the CLI uses ~/.docker, where Docker Desktop installs its plugins.
+# export DOCKER_CONFIG="$HOME/.config/docker"
 
 # OpenSSL
 export PATH="$HOMEBREW_PREFIX/opt/openssl/bin:$PATH"
@@ -118,6 +118,9 @@ export PATH=".git/safe/../../bin:$PATH"
 # Zoxide
 export _ZO_DATA_DIR="$HOME/.cache/zoxide"
 eval "$(zoxide init bash)"
+
+# Command Prompt
+source "$HOME/.config/bash/prompt.sh"
 
 ulimit -Sn 10240
 
