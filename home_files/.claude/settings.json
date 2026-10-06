@@ -48,10 +48,6 @@
           {
             "type": "command",
             "command": "/Users/dinshawgobhai/.config/iterm2/cc-status"
-          },
-          {
-            "type": "command",
-            "command": "python3 \"$HOME/Dropbox/ObsidianVault/Dashboard/.claude/hooks/log-session.py\""
           }
         ]
       }
@@ -150,11 +146,6 @@
       "**Trusted repo**: /Users/dinshawgobhai/code/catalog (working directory) and its remote github.com:Mountian-Dev/catalog.git \u2014 private repo, so confidential business material is fine to commit here; secrets and personal/sensitive data are never cleared into it by visibility alone",
       "**Org-specific CLIs**: None configured",
       "routine under bin/ prefix (e.g. `bin/ci`, `bin/rails`, `bin/setup`) \u2014 frequently used per-project scripts"
-    ]
-  },
-  "permissions": {
-    "additionalDirectories": [
-      "/Users/dinshawgobhai/Dropbox/ObsidianVault/Dashboard"
     ]
   },
   "env": {

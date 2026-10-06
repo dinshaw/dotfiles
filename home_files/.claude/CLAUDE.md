@@ -24,12 +24,6 @@
 - Run commands bare (the shell handles mise). Use absolute paths, not `cd x && ...`.
 - Don't run db:drop / db:create / db:migrate on my machine; I do that.
 
-# Dashboard
-
-- My project dashboard lives at ~/Dropbox/ObsidianVault/Dashboard.
-- Before ending a substantial work session, offer to run /dashboard-status.
-- Never edit my Obsidian vault outside that Dashboard folder.
-
 # Subagent model selection
 
 When spawning a subagent, always pass a model explicitly. Pick the cheapest model that can do the task:
