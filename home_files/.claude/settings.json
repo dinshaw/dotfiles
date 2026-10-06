@@ -1,5 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "60",
+    "BASH_MAX_OUTPUT_LENGTH": "15000",
+    "CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH": "1024",
+    "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "1"
+  },
   "model": "opus[1m]",
   "hooks": {
     "Notification": [
@@ -103,6 +110,18 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "agent-watch@claude-skills": true,
+    "gobhai@claude-skills": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-skills": {
+      "source": {
+        "source": "github",
+        "repo": "gobhai-dev/claude-skills"
+      }
+    }
+  },
   "alwaysThinkingEnabled": false,
   "effortLevel": "medium",
   "skipWorkflowUsageWarning": true,
@@ -124,35 +143,28 @@
     "environment": [
       "### Org-wide",
       "**Organization**: Mountian-Dev (GitHub org; repo `Mountian-Dev/catalog`)",
-      "**Cloud provider(s)**: Cloudflare (R2 object storage, AI Gateway) \u2014 production; local disk in dev",
+      "**Cloud provider(s)**: Cloudflare (R2 object storage, AI Gateway) — production; local disk in dev",
       "**Repository visibility**: Private (Mountian-Dev/catalog, confirmed via gh)",
-      "**Internal sharing / snippet hosting**: None configured \u2014 treat public paste/gist services as outside the trust boundary",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
       "**Secrets management**: Rails encrypted credentials (`config/credentials.yml.enc`, `RAILS_MASTER_KEY`); CI secrets referenced: `FONTAWESOME_NPM_AUTH_TOKEN`, `GITHUB_TOKEN`, `RAILS_MASTER_KEY`",
       "**Default / protected branches**: `main` (default, protected; ruleset `main` active, `Code Quality Copilot review for default branch` disabled)",
       "**CI/CD deploy targets**: Railway (production deploy target per CLAUDE.md and `railway.json`; `railway` CLI used routinely)",
       "**Network posture**: None configured",
-      "**Source control**: github.com:Mountian-Dev/catalog.git (origin) \u2014 the trusted repo and its remote only",
+      "**Source control**: github.com:Mountian-Dev/catalog.git (origin) — the trusted repo and its remote only",
       "**Trusted internal domains**: None configured",
       "**Trusted cloud buckets**: None configured",
-      "**Key internal services**: keptgold.com (contacted 8\u00d7 in this project's transcripts)",
+      "**Key internal services**: keptgold.com (contacted 8× in this project's transcripts)",
       "**Internal package registry**: npm.fontawesome.com (Font Awesome Pro package registry, per CI secret `FONTAWESOME_NPM_AUTH_TOKEN`)",
       "**Sensitive data locations & audiences**: `.env*`, `config/*.key`, `config/credentials.yml.enc`, `config/credentials.yml.example`; integration credentials are AR-encrypted (see `db/migrate/20260416182038_encrypt_integration_credentials.rb`); share only with audiences cleared at the [named+specifics] bar",
       "**Data retention / declassification**: None configured",
       "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment; Railway production deploy target for this repo",
-      "**Protected deployment namespaces / environments**: None configured \u2014 fall back to the Sensitive remote targets heuristic",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
       "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
       "### User-specific",
       "**Primary use of Claude Code**: software development (Rails app development on the catalog project)",
-      "**Trusted repo**: /Users/dinshawgobhai/code/catalog (working directory) and its remote github.com:Mountian-Dev/catalog.git \u2014 private repo, so confidential business material is fine to commit here; secrets and personal/sensitive data are never cleared into it by visibility alone",
+      "**Trusted repo**: /Users/dinshawgobhai/code/catalog (working directory) and its remote github.com:Mountian-Dev/catalog.git — private repo, so confidential business material is fine to commit here; secrets and personal/sensitive data are never cleared into it by visibility alone",
       "**Org-specific CLIs**: None configured",
-      "routine under bin/ prefix (e.g. `bin/ci`, `bin/rails`, `bin/setup`) \u2014 frequently used per-project scripts"
+      "routine under bin/ prefix (e.g. `bin/ci`, `bin/rails`, `bin/setup`) — frequently used per-project scripts"
     ]
-  },
-  "env": {
-    "CLAUDE_CODE_SUBAGENT_MODEL": "sonnet",
-    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "60",
-    "BASH_MAX_OUTPUT_LENGTH": "15000",
-    "CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH": "1024",
-    "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "1"
   }
 }
