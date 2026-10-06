@@ -13,6 +13,7 @@
 # Git
 
 - Never commit to main. Branch + PR, even for one line. I merge.
+- Exception: a brand-new repo with no commits may get its bootstrap commit straight on main.
 - Exception: if my first prompt ends with `#merge`, open the PR, fix CI failures, and merge once GitHub CI is green.
 - Headline past tense ("Added..."), 70 chars max; body wrapped at 80.
 - I rebase and fixup constantly: make clean, logical commits. Use --force-with-lease only, and confirm first.
