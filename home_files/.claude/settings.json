@@ -98,10 +98,6 @@
           {
             "type": "command",
             "command": "/Users/dinshawgobhai/.config/iterm2/cc-status"
-          },
-          {
-            "type": "command",
-            "command": "echo 'Delegate searches, reads, research and edits to subagents with an explicit model (haiku -> sonnet -> opus). Keep only orchestration and decisions in the main thread.'"
           }
         ]
       }
