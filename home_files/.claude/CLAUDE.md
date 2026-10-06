@@ -24,9 +24,11 @@
 - Run commands bare (the shell handles mise). Use absolute paths, not `cd x && ...`.
 - Don't run db:drop / db:create / db:migrate on my machine; I do that.
 
-# Subagent model selection
+# Subagents
 
-When spawning a subagent, always pass a model explicitly. Pick the cheapest model that can do the task:
+Delegate by default. Hand searches, file reads, web research, log summaries and edits to subagents; keep only orchestration, decisions and talking to me in the main thread. Doing it yourself is the exception, for a single quick lookup.
+
+Always pass a model explicitly. Pick the cheapest model that can do the task:
 
 - haiku: file/code search, read-only exploration, summarizing logs or command output, simple mechanical edits.
 - sonnet: multi-file code changes, debugging, writing tests, research synthesis.
