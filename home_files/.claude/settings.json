@@ -111,8 +111,7 @@
     ]
   },
   "enabledPlugins": {
-    "gobhai@claude-skills": true,
-    "workflow@claude-skills": false
+    "gobhai@claude-skills": true
   },
   "extraKnownMarketplaces": {
     "claude-skills": {
