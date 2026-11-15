@@ -111,8 +111,8 @@
     ]
   },
   "enabledPlugins": {
-    "agent-watch@claude-skills": true,
-    "gobhai@claude-skills": true
+    "gobhai@claude-skills": true,
+    "workflow@claude-skills": false
   },
   "extraKnownMarketplaces": {
     "claude-skills": {
