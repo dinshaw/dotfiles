@@ -7,7 +7,7 @@
     "CLAUDE_CODE_MAX_MCP_DESCRIPTION_LENGTH": "1024",
     "CLAUDE_CODE_SIMPLE_SYSTEM_PROMPT": "1"
   },
-  "model": "opus[1m]",
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {

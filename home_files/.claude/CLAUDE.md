@@ -37,3 +37,5 @@ Always pass a model explicitly. Pick the cheapest model that can do the task:
 - opus: architecture decisions, hard debugging, security-sensitive or ambiguous judgment calls.
 
 If a haiku subagent returns a wrong or thin result, retry once on sonnet rather than accepting it.
+
+The main thread runs on Sonnet. When a task needs opus-level judgment, hand that part to an opus subagent; if the whole task needs it, tell me to switch with `/model opus`.
